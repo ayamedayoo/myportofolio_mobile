@@ -3,7 +3,9 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:myportofolio_mobile/main.dart';
 
 void main() {
-  testWidgets('Halaman utama menampilkan identitas dan tombol menu', (tester) async {
+  testWidgets('Halaman utama menampilkan identitas dan tombol menu', (
+    tester,
+  ) async {
     await tester.pumpWidget(const MyApp());
 
     expect(find.text('2406000001'), findsOneWidget);
@@ -19,6 +21,9 @@ void main() {
 
     await tester.tap(find.text('Lihat Proyek'));
     await tester.pump();
-    expect(find.text('Kamu telah menekan tombol Lihat Proyek!'), findsOneWidget);
+    expect(
+      find.text('Kamu telah menekan tombol Lihat Proyek!'),
+      findsOneWidget,
+    );
   });
 }
