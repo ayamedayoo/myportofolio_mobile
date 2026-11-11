@@ -1,17 +1,48 @@
-# myportofolio_mobile
+# MyPortfolio Mobile
 
-A new Flutter project.
+Aplikasi mobile Flutter untuk portofolio pribadi, dibuat untuk mata kuliah Pemrograman Berbasis Platform (PBP) Fasilkom UI, Semester Gasal 2026/2027. Aplikasi ini adalah pasangan dari website portofolio Django di repositori [ayamedayoo/myportofolio](https://github.com/ayamedayoo/myportofolio). Pada tutorial berikutnya, aplikasi akan dihubungkan ke API DRF di `/api/v1/`.
 
-## Getting Started
+## Progres Mingguan
 
-This project is a starting point for a Flutter application.
+| Minggu | Yang dikerjakan |
+| --- | --- |
+| Tutorial 8 | Membuat proyek `myportofolio_mobile`, memisahkan halaman utama ke `lib/menu.dart`, mengubah tema warna (indigo dan amber), mengubah `MyHomePage` menjadi `StatelessWidget`, membuat widget `InfoCard` dan `ItemCard`, serta menampilkan SnackBar saat tombol ditekan. Data yang dipakai masih data contoh milik Burhan. |
 
-A few resources to get you started if this is your first Flutter project:
+## Struktur Proyek
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+```
+lib/
+├── main.dart   # titik awal aplikasi: MyApp (MaterialApp dan tema)
+└── menu.dart   # halaman utama: MyHomePage, InfoCard, ItemHomepage, ItemCard
+test/
+└── widget_test.dart  # test identitas, tombol menu, dan SnackBar
+```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Cara Menjalankan Proyek
+
+1. Pasang [Flutter SDK](https://docs.flutter.dev/get-started/install) dan pastikan folder `flutter/bin` sudah masuk ke PATH. Cek dengan:
+
+   ```bash
+   flutter doctor
+   ```
+
+2. Clone repositori, lalu masuk ke foldernya:
+
+   ```bash
+   git clone https://github.com/ayamedayoo/myportofolio_mobile.git
+   cd myportofolio_mobile
+   flutter pub get
+   ```
+
+3. Jalankan aplikasi di Google Chrome:
+
+   ```bash
+   flutter run -d chrome
+   ```
+
+4. Cek kualitas kode dan jalankan test:
+
+   ```bash
+   flutter analyze
+   flutter test
+   ```
