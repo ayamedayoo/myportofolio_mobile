@@ -8,9 +8,9 @@ void main() {
   ) async {
     await tester.pumpWidget(const MyApp());
 
-    expect(find.text('2406000001'), findsOneWidget);
-    expect(find.text('Burhan'), findsOneWidget);
-    expect(find.text('PBP A'), findsOneWidget);
+    expect(find.text('2506657333'), findsOneWidget);
+    expect(find.text('Samuel Kaevin Phasca'), findsOneWidget);
+    expect(find.text('PBP E'), findsOneWidget);
     expect(find.text('Lihat Proyek'), findsOneWidget);
     expect(find.text('Tambah Proyek'), findsOneWidget);
     expect(find.text('Logout'), findsOneWidget);
@@ -19,6 +19,8 @@ void main() {
   testWidgets('Menekan tombol memunculkan SnackBar', (tester) async {
     await tester.pumpWidget(const MyApp());
 
+    // Grid tombol bisa berada di bawah area layar test, jadi digulir dulu.
+    await tester.ensureVisible(find.text('Lihat Proyek'));
     await tester.tap(find.text('Lihat Proyek'));
     await tester.pump();
     expect(
