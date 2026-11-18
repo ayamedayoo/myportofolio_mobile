@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 /// Sapaan di bagian atas halaman: avatar berisi inisial dan nama pemilik.
 class ProfileHeader extends StatelessWidget {

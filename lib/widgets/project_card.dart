@@ -1,9 +1,13 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter/services.dart';
 import 'package:myportofolio_mobile/models/item_homepage.dart';
+import 'package:myportofolio_mobile/screens/project_form.dart';
 import 'package:myportofolio_mobile/widgets/app_snackbar.dart';
 
 /// Tombol aksi berbentuk kartu. Warna latarnya diambil dari [ItemHomepage.color].
+///
+/// Tombol "Tambah Proyek" membuka [ProjectFormPage] lewat `Navigator.push`,
+/// jadi pengguna bisa kembali ke halaman utama dengan tombol Back.
 class ItemCard extends StatelessWidget {
   const ItemCard(this.item, {super.key});
 
@@ -28,6 +32,16 @@ class ItemCard extends StatelessWidget {
               // Getaran singkat di ponsel sebagai tanda tombol sudah ditekan.
               HapticFeedback.lightImpact();
               showAppSnackBar(context, item.pressedMessage);
+
+              // Navigate ke halaman yang sesuai
+              if (item.name == "Tambah Proyek") {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const ProjectFormPage(),
+                  ),
+                );
+              }
             },
             child: Padding(
               padding: const EdgeInsets.all(8),
