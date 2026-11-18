@@ -34,6 +34,7 @@ Isi halaman utama saat ini:
 | Minggu | Yang dikerjakan |
 | --- | --- |
 | Tutorial 8 | Membuat proyek `myportofolio_mobile`, memisahkan halaman utama ke `lib/menu.dart`, mengubah tema warna (indigo dan amber), mengubah `MyHomePage` menjadi `StatelessWidget`, membuat widget `InfoCard` dan `ItemCard`, serta menampilkan SnackBar saat tombol ditekan. Data yang dipakai masih data contoh milik Burhan. |
+| Tutorial 9 | Menambahkan drawer menu (`LeftDrawer`) untuk berpindah ke Home dan Add Project, halaman form `ProjectFormPage` berisi nama, deskripsi, kategori (dropdown), teknologi, dan tautan proyek dengan validasi, pop-up `AlertDialog` yang menampilkan isi form, navigasi tombol Tambah Proyek dengan `Navigator.push()`, mengganti impor ke `package:material_ui/material_ui.dart`, serta refactoring ke folder `screens/` dan `widgets/`. Ditambah 4 test untuk navigasi dan form. |
 | Tugas 7 | Data identitas diganti dengan data saya. Model `ItemHomepage` diberi atribut `color` supaya setiap tombol punya warna sendiri. Tombol disesuaikan dengan bagian portofolio saya (Proyek dan Award). Model dan widget dipisah ke folder sendiri, overflow halaman diperbaiki, dan ditambah mode gelap, grid responsif, salin isi kartu, header profil, serta 10 test. |
 
 ## Struktur Proyek
@@ -42,17 +43,20 @@ Isi halaman utama saat ini:
 lib/
 ├── models/
 │   └── item_homepage.dart     # model tombol aksi (nama, ikon, warna)
+├── screens/
+│   ├── menu.dart              # halaman utama: MyHomePage
+│   └── project_form.dart      # halaman form tambah proyek: ProjectFormPage
 ├── theme/
 │   └── app_theme.dart         # pembuat tema dan penyimpan mode terang/gelap
 ├── widgets/
 │   ├── app_snackbar.dart      # fungsi SnackBar yang dipakai bersama
 │   ├── info_card.dart         # kartu identitas (bisa disalin)
-│   ├── item_card.dart         # kartu tombol aksi
-│   └── profile_header.dart    # avatar inisial dan sapaan
-├── main.dart   # titik awal aplikasi: MyApp (MaterialApp dan tema)
-└── menu.dart   # halaman utama: MyHomePage, InfoCard, ItemHomepage, ItemCard
+│   ├── left_drawer.dart       # drawer menu untuk navigasi antarhalaman
+│   ├── profile_header.dart    # avatar inisial dan sapaan
+│   └── project_card.dart      # kartu tombol aksi (ItemCard) dan navigasinya
+└── main.dart                  # titik awal aplikasi: MyApp (MaterialApp dan tema)
 test/
-└── widget_test.dart  # test identitas, tombol menu, dan SnackBar
+└── widget_test.dart  # test halaman utama, navigasi, dan form tambah proyek
 ```
 
 ## Tugas 7: Halaman Utama Portofolio

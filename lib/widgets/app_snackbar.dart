@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 /// Menampilkan SnackBar melayang dan menutup SnackBar lama lebih dulu,
 /// supaya pesan langsung berganti saat beberapa tombol ditekan berturut-turut.

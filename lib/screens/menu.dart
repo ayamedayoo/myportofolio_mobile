@@ -1,8 +1,9 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:myportofolio_mobile/models/item_homepage.dart';
 import 'package:myportofolio_mobile/theme/app_theme.dart';
 import 'package:myportofolio_mobile/widgets/info_card.dart';
-import 'package:myportofolio_mobile/widgets/item_card.dart';
+import 'package:myportofolio_mobile/widgets/left_drawer.dart';
+import 'package:myportofolio_mobile/widgets/project_card.dart';
 import 'package:myportofolio_mobile/widgets/profile_header.dart';
 
 /// Lebar layar (logical pixel) mulai dari mana grid memakai empat kolom,
@@ -43,6 +44,8 @@ class MyHomePage extends StatelessWidget {
         backgroundColor: colorScheme.primary,
         // onPrimary menjaga judul tetap terbaca di tema terang maupun gelap.
         foregroundColor: colorScheme.onPrimary,
+        // Ikon hamburger drawer ikut berwarna onPrimary.
+        iconTheme: IconThemeData(color: colorScheme.onPrimary),
         actions: [
           IconButton(
             tooltip: isDark ? 'Mode terang' : 'Mode gelap',
@@ -51,6 +54,7 @@ class MyHomePage extends StatelessWidget {
           ),
         ],
       ),
+      drawer: const LeftDrawer(),
       // SingleChildScrollView mencegah overflow saat isi halaman lebih
       // tinggi dari layar, misalnya di ponsel kecil atau mode lanskap.
       body: SingleChildScrollView(
